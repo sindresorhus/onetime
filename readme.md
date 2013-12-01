@@ -80,6 +80,11 @@ Default: `false`
 Set to `true` if you want it to fail with an error when called more than once.
 
 
+## Thanks
+
+Huge thanks to [@passy](https://github.com/passy) for lending me an adapter so I could code this. From Paris with code. xoxo.
+
+
 ## License
 
 MIT © [Sindre Sorhus](http://sindresorhus.com)
