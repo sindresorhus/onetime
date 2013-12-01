@@ -1,0 +1,33 @@
+{
+  "name": "onetime",
+  "version": "0.0.0",
+  "description": "Only call a function once",
+  "keywords": [
+    "once",
+    "one",
+    "single",
+    "call",
+    "function",
+    "prevent"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "files": [
+    "onetime.js"
+  ],
+  "main": "onetime.js",
+  "repository": "sindresorhus/onetime",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "onetime",
+  "version": "0.0.0",
+  "description": "Only call a function once",
+  "license": "MIT",
+  "main": "onetime.js",
+  "repo": "sindresorhus/onetime",
+  "scripts": ["onetime.js"],
+  "keywords": [
+    "once",
+    "one",
+    "single",
+    "call",
+    "function",
+    "prevent"
+  ]
+}

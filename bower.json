@@ -1,0 +1,20 @@
+{
+  "name": "onetime",
+  "version": "0.0.0",
+  "description": "Only call a function once",
+  "main": "onetime.js",
+  "keywords": [
+    "once",
+    "one",
+    "single",
+    "call",
+    "function",
+    "prevent"
+  ],
+  "ignore": [
+    ".*",
+    "test.js",
+    "component.json",
+    "package.json"
+  ]
+}
