@@ -1,7 +1,7 @@
 {
   "name": "onetime",
   "version": "0.1.0",
-  "description": "Only call a function once",
+  "description": "Only call a function once. Unlike the module `once`, this one isn't naughty extending `Function.prototype`.",
   "keywords": [
     "once",
     "one",
@@ -25,7 +25,7 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "mocha": "~1.x"
   },
   "engines": {
     "node": ">=0.8.0"

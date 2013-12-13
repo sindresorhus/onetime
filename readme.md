@@ -4,6 +4,8 @@
 
 When called multiple times it will return the return value from the first call.
 
+*Unlike the module [once](https://github.com/isaacs/once), this one isn't naughty extending `Function.prototype`.*
+
 
 ## Install
 
@@ -30,25 +32,19 @@ component install sindresorhus/onetime
 
 ## Examples
 
-### Node.js
+##### Node.js
 
 ```js
 var onetime = require('onetime');
-var i = 0;
-var foo = onetime(function () {
-	return i++;
-});
-
-foo(); //=> 0
-foo(); //=> 0
-foo(); //=> 0
 ```
 
-### Bower
+##### Bower
 
 ```html
 <script src="bower_components/onetime/onetime.js"></script>
 ```
+
+##### Usage
 
 ```js
 var i = 0;
@@ -77,7 +73,9 @@ Function that should only be called once.
 Type: `Boolean`  
 Default: `false`
 
-Set to `true` if you want it to fail with an error when called more than once.
+![](screenshot-shouldthrow.png)
+
+Set to `true` if you want it to fail with a nice and descriptive error when called more than once.
 
 
 ## Thanks
