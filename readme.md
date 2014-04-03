@@ -1,4 +1,4 @@
-# onetime [![Build Status](https://secure.travis-ci.org/sindresorhus/onetime.png?branch=master)](http://travis-ci.org/sindresorhus/onetime)
+# onetime [![Build Status](https://travis-ci.org/sindresorhus/onetime.svg?branch=master)](https://travis-ci.org/sindresorhus/onetime)
 
 > Only call a function once
 
@@ -11,26 +11,20 @@ When called multiple times it will return the return value from the first call.
 
 Download [manually](https://github.com/sindresorhus/onetime/releases) or with a package-manager.
 
-#### [npm](https://npmjs.org/package/onetime)
-
-```
-npm install --save onetime
+```bash
+$ npm install --save onetime
 ```
 
-#### [Bower](http://bower.io)
-
-```
-bower install --save onetime
+```bash
+$ bower install --save onetime
 ```
 
-#### [Component](https://github.com/component/component)
-
-```
-component install sindresorhus/onetime
+```bash
+$ component install sindresorhus/onetime
 ```
 
 
-## Examples
+## Usage
 
 ##### Node.js
 
@@ -78,11 +72,6 @@ Default: `false`
 Set to `true` if you want it to fail with a nice and descriptive error when called more than once.
 
 
-## Thanks
-
-Huge thanks to [@passy](https://github.com/passy) for lending me an adapter so I could code this. From Paris with code. xoxo.
-
-
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
