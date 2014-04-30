@@ -1,6 +1,5 @@
 {
   "name": "onetime",
-  "version": "0.1.0",
   "description": "Only call a function once",
   "main": "onetime.js",
   "keywords": [

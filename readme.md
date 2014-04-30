@@ -9,39 +9,24 @@ When called multiple times it will return the return value from the first call.
 
 ## Install
 
-Download [manually](https://github.com/sindresorhus/onetime/releases) or with a package-manager.
-
-```bash
+```sh
 $ npm install --save onetime
 ```
 
-```bash
+```sh
 $ bower install --save onetime
 ```
 
-```bash
+```sh
 $ component install sindresorhus/onetime
 ```
 
 
 ## Usage
 
-##### Node.js
-
-```js
-var onetime = require('onetime');
-```
-
-##### Bower
-
-```html
-<script src="bower_components/onetime/onetime.js"></script>
-```
-
-##### Usage
-
 ```js
 var i = 0;
+
 var foo = onetime(function () {
 	return i++;
 });
@@ -58,13 +43,13 @@ foo(); //=> 0
 
 #### function
 
-Type: `Function`
+Type: `function`
 
 Function that should only be called once.
 
 #### shouldThrow
 
-Type: `Boolean`  
+Type: `boolean`  
 Default: `false`
 
 ![](screenshot-shouldthrow.png)
