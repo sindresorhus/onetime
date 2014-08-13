@@ -17,9 +17,8 @@
     "url": "http://sindresorhus.com"
   },
   "files": [
-    "onetime.js"
+    "index.js"
   ],
-  "main": "onetime.js",
   "repository": "sindresorhus/onetime",
   "scripts": {
     "test": "mocha"
@@ -28,6 +27,6 @@
     "mocha": "*"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   }
 }

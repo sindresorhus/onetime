@@ -13,14 +13,6 @@ When called multiple times it will return the return value from the first call.
 $ npm install --save onetime
 ```
 
-```sh
-$ bower install --save onetime
-```
-
-```sh
-$ component install sindresorhus/onetime
-```
-
 
 ## Usage
 
@@ -59,4 +51,4 @@ Set to `true` if you want it to fail with a nice and descriptive error when call
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](http://sindresorhus.com)
