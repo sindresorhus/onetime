@@ -1,6 +1,6 @@
 {
   "name": "onetime",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Only call a function once. Unlike the module `once`, this one isn't naughty extending `Function.prototype`.",
   "keywords": [
     "once",
