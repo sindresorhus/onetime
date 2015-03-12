@@ -14,11 +14,14 @@ module.exports = function (fn, errMsg) {
 				fnName = fnName ? fnName + '()' : 'Function';
 				throw new Error(fnName + ' can only be called once.');
 			}
+
 			return ret;
 		}
+
 		called = true;
 		ret = fn.apply(this, arguments);
 		fn = null;
+
 		return ret;
 	};
 };
