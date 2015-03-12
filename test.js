@@ -1,34 +1,42 @@
 'use strict';
-var assert = require('assert');
+var test = require('ava');
 var onetime = require('./');
 
-it('only call a function once', function () {
+test('only call a function once', function (t) {
 	var i = 0;
 	var fn = onetime(function () {
 		return i++;
 	});
 
-	assert.equal(fn(), 0);
-	assert.equal(fn(), 0);
-	assert.equal(fn(), 0);
+	t.assert(fn() === 0);
+	t.assert(fn() === 0);
+	t.assert(fn() === 0);
+	t.end();
 });
 
-it('option to throw is called more than once', function () {
+test('option to throw is called more than once', function (t) {
 	var fn = onetime(function () {}, true);
 
 	fn();
 
-	assert.throws(function () {
+	try {
 		fn();
-	});
+	} catch (err) {
+		t.assert(err instanceof Error);
+		t.end();
+	}
 });
 
-it('should return use the name of the function if available', function () {
+test('should return use the name of the function if available', function (t) {
 	var fn = onetime(function foo() {}, true);
 
 	fn();
 
-	assert.throws(function () {
+	try {
 		fn();
-	}, Error, 'foo() can only be called once.');
+	} catch (err) {
+		t.assert(err instanceof Error);
+		t.assert(err.message === 'foo() can only be called once.');
+		t.end();
+	}
 });
