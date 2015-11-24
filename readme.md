@@ -17,11 +17,9 @@ $ npm install --save onetime
 ## Usage
 
 ```js
-var i = 0;
+let i = 0;
 
-var foo = onetime(function () {
-	return i++;
-});
+const foo = onetime(() => i++);
 
 foo(); //=> 0
 foo(); //=> 0
