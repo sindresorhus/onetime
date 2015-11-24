@@ -21,10 +21,11 @@
   ],
   "repository": "sindresorhus/onetime",
   "scripts": {
-    "test": "node test.js"
+    "test": "xo && ava"
   },
   "devDependencies": {
-    "ava": "^0.0.4"
+    "ava": "*",
+    "xo": "*"
   },
   "engines": {
     "node": ">=0.10.0"
