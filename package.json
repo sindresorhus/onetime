@@ -2,6 +2,22 @@
   "name": "onetime",
   "version": "1.0.0",
   "description": "Only call a function once. Unlike the module `once`, this one isn't naughty extending `Function.prototype`.",
+  "license": "MIT",
+  "repository": "sindresorhus/onetime",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "once",
     "one",
@@ -10,24 +26,13 @@
     "function",
     "prevent"
   ],
-  "license": "MIT",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
-  },
-  "files": [
-    "index.js"
-  ],
-  "repository": "sindresorhus/onetime",
-  "scripts": {
-    "test": "xo && ava"
-  },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
   },
-  "engines": {
-    "node": ">=0.10.0"
+  "xo": {
+    "ignores": [
+      "test.js"
+    ]
   }
 }
