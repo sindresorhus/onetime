@@ -8,7 +8,7 @@ module.exports = function (fn, errMsg) {
 	var called = false;
 	var fnName = fn.displayName || fn.name || (/function ([^\(]+)/.exec(fn.toString()) || [])[1];
 
-	return function () {
+	var onetime = function () {
 		if (called) {
 			if (errMsg === true) {
 				fnName = fnName ? fnName + '()' : 'Function';
@@ -24,4 +24,8 @@ module.exports = function (fn, errMsg) {
 
 		return ret;
 	};
+
+	onetime.displayName = fnName;
+
+	return onetime;
 };
