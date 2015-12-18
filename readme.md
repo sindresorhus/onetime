@@ -9,7 +9,7 @@ When called multiple times it will return the return value from the first call.
 
 ## Install
 
-```sh
+```
 $ npm install --save onetime
 ```
 

@@ -1,12 +1,12 @@
 'use strict';
 module.exports = function (fn, errMsg) {
 	if (typeof fn !== 'function') {
-		throw new TypeError('Expected a function.');
+		throw new TypeError('Expected a function');
 	}
 
 	var ret;
 	var called = false;
-	var fnName = fn.name || (/function ([^\(]+)/.exec(fn.toString()) || [])[1];
+	var fnName = fn.displayName || fn.name || (/function ([^\(]+)/.exec(fn.toString()) || [])[1];
 
 	return function () {
 		if (called) {
