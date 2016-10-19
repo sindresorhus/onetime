@@ -1,7 +1,7 @@
 {
   "name": "onetime",
   "version": "1.1.0",
-  "description": "Only call a function once",
+  "description": "Ensure a function is only called once",
   "license": "MIT",
   "repository": "sindresorhus/onetime",
   "author": {
@@ -10,7 +10,7 @@
     "url": "sindresorhus.com"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "xo && ava"
@@ -20,14 +20,24 @@
   ],
   "keywords": [
     "once",
+    "function",
     "one",
+    "onetime",
+    "func",
+    "fn",
     "single",
     "call",
-    "function",
+    "called",
     "prevent"
   ],
+  "dependencies": {
+    "mimic-fn": "^1.0.0"
+  },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }
