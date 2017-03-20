@@ -2,7 +2,7 @@
 const mimicFn = require('mimic-fn');
 
 module.exports = (fn, opts) => {
-	// TODO: remove this in v3
+	// TODO: Remove this in v3
 	if (opts === true) {
 		throw new TypeError('The second argument is now an options object');
 	}
