@@ -12,5 +12,5 @@ test('call function once', t => {
 test('option to throw is called more than once', t => {
 	const f = m(() => {}, {throw: true});
 	f();
-	t.throws(f, Error);
+	t.throws(f, /Function .* can only be called once/);
 });

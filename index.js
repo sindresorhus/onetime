@@ -15,12 +15,12 @@ module.exports = (fn, opts) => {
 
 	let ret;
 	let called = false;
+	const fnName = fn.displayName || fn.name || '<anonymous>';
 
 	const onetime = function () {
 		if (called) {
 			if (opts.throw === true) {
-				const name = fn.displayName || fn.name || '<anonymous>';
-				throw new Error(`Function \`${name}\` can only be called once`);
+				throw new Error(`Function \`${fnName}\` can only be called once`);
 			}
 
 			return ret;
