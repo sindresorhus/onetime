@@ -24,6 +24,8 @@ const foo = onetime(() => i++);
 foo(); //=> 0
 foo(); //=> 0
 foo(); //=> 0
+
+onetime.callCount(foo); //=> 3
 ```
 
 ```js
@@ -58,6 +60,16 @@ Type: `boolean`<br>
 Default: `false`
 
 Throw an error when called more than once.
+
+## onetime.callCount(fn)
+
+Returns a number representing how many times `fn` is called.
+
+#### fn
+
+Type: `Function`
+
+Function to get call count from.
 
 
 ## License

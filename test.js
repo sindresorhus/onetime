@@ -14,3 +14,11 @@ test('option to throw is called more than once', t => {
 	f();
 	t.throws(f, /Function .* can only be called once/);
 });
+
+test('`callCount` method', t => {
+	const f = m(() => {});
+	f();
+	f();
+	f();
+	t.is(m.callCount(f), 3);
+});
