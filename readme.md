@@ -4,13 +4,13 @@
 
 When called multiple times it will return the return value from the first call.
 
-*Unlike the module [once](https://github.com/isaacs/once), this one isn't naughty extending `Function.prototype`.*
+*Unlike the module [once](https://github.com/isaacs/once), this one isn't naughty and extending `Function.prototype`.*
 
 
 ## Install
 
 ```
-$ npm install --save onetime
+$ npm install onetime
 ```
 
 
@@ -63,7 +63,18 @@ Throw an error when called more than once.
 
 ## onetime.callCount(fn)
 
-Returns a number representing how many times `fn` is called.
+Returns a number representing how many times `fn` has been called.
+
+```js
+const foo = onetime(() => {});
+
+foo();
+foo();
+foo();
+
+console.log(onetime.callCount(foo));
+//=> 3
+```
 
 #### fn
 

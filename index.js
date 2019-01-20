@@ -1,47 +1,40 @@
 'use strict';
 const mimicFn = require('mimic-fn');
 
-const calledFns = new WeakMap();
+const calledFunctions = new WeakMap();
 
-module.exports = (fn, opts) => {
-	// TODO: Remove this in v3
-	if (opts === true) {
-		throw new TypeError('The second argument is now an options object');
-	}
-
+module.exports = (fn, options = {}) => {
 	if (typeof fn !== 'function') {
 		throw new TypeError('Expected a function');
 	}
 
-	opts = opts || {};
-
 	let ret;
-	let called = false;
+	let isCalled = false;
 	let count = 0;
-	const fnName = fn.displayName || fn.name || '<anonymous>';
+	const funcionName = fn.displayName || fn.name || '<anonymous>';
 
-	const onetime = function () {
-		calledFns.set(onetime, count++);
+	const onetime = function (...args) {
+		calledFunctions.set(onetime, count++);
 
-		if (called) {
-			if (opts.throw === true) {
-				throw new Error(`Function \`${fnName}\` can only be called once`);
+		if (isCalled) {
+			if (options.throw === true) {
+				throw new Error(`Function \`${funcionName}\` can only be called once`);
 			}
 
 			return ret;
 		}
 
-		called = true;
-		ret = fn.apply(this, arguments);
+		isCalled = true;
+		ret = fn.apply(this, args);
 		fn = null;
 
 		return ret;
 	};
 
 	mimicFn(onetime, fn);
-	calledFns.set(onetime, count++);
+	calledFunctions.set(onetime, count++);
 
 	return onetime;
 };
 
-module.exports.callCount = fn => calledFns.get(fn);
+module.exports.callCount = fn => calledFunctions.get(fn);

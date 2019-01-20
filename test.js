@@ -1,24 +1,24 @@
 import test from 'ava';
-import m from '.';
+import onetime from '.';
 
 test('call function once', t => {
 	let i = 0;
-	const f = m(() => i++);
-	t.is(f(), 0);
-	t.is(f(), 0);
-	t.is(f(), 0);
+	const fixture = onetime(() => i++);
+	t.is(fixture(), 0);
+	t.is(fixture(), 0);
+	t.is(fixture(), 0);
 });
 
 test('option to throw is called more than once', t => {
-	const f = m(() => {}, {throw: true});
-	f();
-	t.throws(f, /Function .* can only be called once/);
+	const fixture = onetime(() => {}, {throw: true});
+	fixture();
+	t.throws(fixture, /Function .* can only be called once/);
 });
 
 test('`callCount` method', t => {
-	const f = m(() => {});
-	f();
-	f();
-	f();
-	t.is(m.callCount(f), 3);
+	const fixture = onetime(() => {});
+	fixture();
+	fixture();
+	fixture();
+	t.is(onetime.callCount(fixture), 3);
 });
