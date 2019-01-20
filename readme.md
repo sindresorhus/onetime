@@ -61,7 +61,7 @@ Default: `false`
 
 Throw an error when called more than once.
 
-## onetime.callCount(fn)
+### onetime.callCount(fn)
 
 Returns a number representing how many times `fn` has been called.
 

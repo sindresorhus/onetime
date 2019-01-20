@@ -11,14 +11,14 @@ module.exports = (fn, options = {}) => {
 	let ret;
 	let isCalled = false;
 	let count = 0;
-	const funcionName = fn.displayName || fn.name || '<anonymous>';
+	const functionName = fn.displayName || fn.name || '<anonymous>';
 
 	const onetime = function (...args) {
 		calledFunctions.set(onetime, count++);
 
 		if (isCalled) {
 			if (options.throw === true) {
-				throw new Error(`Function \`${funcionName}\` can only be called once`);
+				throw new Error(`Function \`${functionName}\` can only be called once`);
 			}
 
 			return ret;
