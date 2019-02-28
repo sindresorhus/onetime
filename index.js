@@ -3,7 +3,7 @@ const mimicFn = require('mimic-fn');
 
 const calledFunctions = new WeakMap();
 
-module.exports = (fn, options = {}) => {
+const oneTime = (fn, options = {}) => {
 	if (typeof fn !== 'function') {
 		throw new TypeError('Expected a function');
 	}
@@ -36,5 +36,8 @@ module.exports = (fn, options = {}) => {
 
 	return onetime;
 };
+
+module.exports = oneTime;
+module.exports.default = oneTime;
 
 module.exports.callCount = fn => calledFunctions.get(fn);
