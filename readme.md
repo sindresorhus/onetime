@@ -19,7 +19,7 @@ $ npm install onetime
 ```js
 let i = 0;
 
-const foo = onetime(() => i++);
+const foo = onetime(() => ++i);
 
 foo(); //=> 0
 foo(); //=> 0

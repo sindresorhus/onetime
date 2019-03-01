@@ -10,6 +10,6 @@ expectType<boolean>(foo2());
 expectType<number>(onetime((first: boolean) => 5)(true));
 expectType<number>(onetime((first: boolean, second: string) => 5)(true, ''));
 
-expectType<number | undefined>(
+expectType<number>(
 	callCount((first: boolean, second: string) => 5)
 );
