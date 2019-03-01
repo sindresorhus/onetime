@@ -1,4 +1,4 @@
-interface Options {
+export interface Options {
 	/**
 	 * Throw an error when called more than once.
 	 *
