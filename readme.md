@@ -65,6 +65,8 @@ Throw an error when called more than once.
 
 Returns a number representing how many times `fn` has been called.
 
+Note: It throws an error if you pass in a function that is not wrapped by `onetime`.
+
 ```js
 const foo = onetime(() => {});
 

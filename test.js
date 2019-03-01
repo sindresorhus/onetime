@@ -17,8 +17,17 @@ test('option to throw is called more than once', t => {
 
 test('`callCount` method', t => {
 	const fixture = onetime(() => {});
+	t.is(onetime.callCount(fixture), 0);
 	fixture();
 	fixture();
 	fixture();
 	t.is(onetime.callCount(fixture), 3);
+});
+
+test('`callCount` method - throw on non-onetime-wrapped functions', t => {
+	const fixture = () => {};
+
+	t.throws(() => {
+		onetime.callCount(fixture);
+	}, /not wrapped/);
 });

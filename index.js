@@ -10,11 +10,11 @@ const oneTime = (fn, options = {}) => {
 
 	let ret;
 	let isCalled = false;
-	let count = 0;
+	let callCount = 0;
 	const functionName = fn.displayName || fn.name || '<anonymous>';
 
 	const onetime = function (...args) {
-		calledFunctions.set(onetime, count++);
+		calledFunctions.set(onetime, ++callCount);
 
 		if (isCalled) {
 			if (options.throw === true) {
@@ -32,7 +32,7 @@ const oneTime = (fn, options = {}) => {
 	};
 
 	mimicFn(onetime, fn);
-	calledFunctions.set(onetime, count++);
+	calledFunctions.set(onetime, callCount);
 
 	return onetime;
 };
@@ -40,4 +40,10 @@ const oneTime = (fn, options = {}) => {
 module.exports = oneTime;
 module.exports.default = oneTime;
 
-module.exports.callCount = fn => calledFunctions.get(fn);
+module.exports.callCount = fn => {
+	if (!calledFunctions.has(fn)) {
+		throw new Error(`The given function \`${fn.name}\` is not wrapped by the \`onetime\` package`);
+	}
+
+	return calledFunctions.get(fn);
+};

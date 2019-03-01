@@ -36,4 +36,4 @@ export default function oneTime<ArgumentsType extends unknown[], ReturnType>(
  */
 export function callCount(
 	fn: (...arguments: unknown[]) => unknown
-): number | undefined;
+): number;
