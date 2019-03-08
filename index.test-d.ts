@@ -1,5 +1,5 @@
 import {expectType} from 'tsd-check';
-import onetime, {callCount} from '.';
+import onetime from '.';
 
 const foo = onetime(() => 5);
 expectType<number>(foo());
@@ -11,5 +11,5 @@ expectType<number>(onetime((first: boolean) => 5)(true));
 expectType<number>(onetime((first: boolean, second: string) => 5)(true, ''));
 
 expectType<number>(
-	callCount((first: boolean, second: string) => 5)
+	onetime.callCount((first: boolean, second: string) => 5)
 );

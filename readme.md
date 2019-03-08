@@ -17,6 +17,8 @@ $ npm install onetime
 ## Usage
 
 ```js
+const onetime = require('onetime');
+
 let i = 0;
 
 const foo = onetime(() => ++i);
@@ -29,6 +31,8 @@ onetime.callCount(foo); //=> 3
 ```
 
 ```js
+const onetime = require('onetime');
+
 const foo = onetime(() => {}, {throw: true});
 
 foo();
