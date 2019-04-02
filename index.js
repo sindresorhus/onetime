@@ -38,6 +38,7 @@ const oneTime = (fn, options = {}) => {
 };
 
 module.exports = oneTime;
+// TODO: Remove this for the next major release
 module.exports.default = oneTime;
 
 module.exports.callCount = fn => {
