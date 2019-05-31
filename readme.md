@@ -44,7 +44,7 @@ foo();
 
 ## API
 
-### onetime(fn, [options])
+### onetime(fn, options?)
 
 Returns a function that only calls `fn` once.
 
@@ -89,6 +89,14 @@ Type: `Function`
 Function to get call count from.
 
 
-## License
+---
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+<div align="center">
+	<b>
+		<a href="https://tidelift.com/subscription/pkg/npm-onetime?utm_source=npm-onetime&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
+	</b>
+	<br>
+	<sub>
+		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
+	</sub>
+</div>
