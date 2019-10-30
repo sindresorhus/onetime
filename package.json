@@ -4,10 +4,11 @@
 	"description": "Ensure a function is only called once",
 	"license": "MIT",
 	"repository": "sindresorhus/onetime",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
 	"engines": {
 		"node": ">=6"

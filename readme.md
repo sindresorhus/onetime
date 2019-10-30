@@ -1,4 +1,4 @@
-# onetime [![Build Status](https://travis-ci.org/sindresorhus/onetime.svg?branch=master)](https://travis-ci.org/sindresorhus/onetime)
+# onetime [![Build Status](https://travis-ci.com/sindresorhus/onetime.svg?branch=master)](https://travis-ci.com/github/sindresorhus/onetime)
 
 > Ensure a function is only called once
 
@@ -6,13 +6,11 @@ When called multiple times it will return the return value from the first call.
 
 *Unlike the module [once](https://github.com/isaacs/once), this one isn't naughty and extending `Function.prototype`.*
 
-
 ## Install
 
 ```
 $ npm install onetime
 ```
-
 
 ## Usage
 
@@ -41,7 +39,6 @@ foo();
 //=> Error: Function `foo` can only be called once
 ```
 
-
 ## API
 
 ### onetime(fn, options?)
@@ -56,11 +53,11 @@ Function that should only be called once.
 
 #### options
 
-Type: `Object`
+Type: `object`
 
 ##### throw
 
-Type: `boolean`<br>
+Type: `boolean`\
 Default: `false`
 
 Throw an error when called more than once.
@@ -90,15 +87,8 @@ Type: `Function`
 
 Function to get call count from.
 
+## onetime for enterprise
 
----
+Available as part of the Tidelift Subscription.
 
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/npm-onetime?utm_source=npm-onetime&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
+The maintainers of onetime and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-onetime?utm_source=npm-onetime&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
