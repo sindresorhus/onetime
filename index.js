@@ -9,24 +9,18 @@ const oneTime = (function_, options = {}) => {
 	}
 
 	let returnValue;
-	let isCalled = false;
 	let callCount = 0;
 	const functionName = function_.displayName || function_.name || '<anonymous>';
 
 	const onetime = function (...arguments_) {
 		calledFunctions.set(onetime, ++callCount);
 
-		if (isCalled) {
-			if (options.throw === true) {
-				throw new Error(`Function \`${functionName}\` can only be called once`);
-			}
-
-			return returnValue;
+		if (callCount === 1) {
+			returnValue = function_.apply(this, arguments_);
+			function_ = null;
+		} else if (options.throw === true) {
+			throw new Error(`Function \`${functionName}\` can only be called once`);
 		}
-
-		isCalled = true;
-		returnValue = function_.apply(this, arguments_);
-		function_ = null;
 
 		return returnValue;
 	};
