@@ -3,10 +3,10 @@ import onetime from '.';
 
 test('call function once', t => {
 	let i = 0;
-	const fixture = onetime(() => i++);
-	t.is(fixture(), 0);
-	t.is(fixture(), 0);
-	t.is(fixture(), 0);
+	const fixture = onetime(() => ++i);
+	t.is(fixture(), 1);
+	t.is(fixture(), 1);
+	t.is(fixture(), 1);
 });
 
 test('option to throw is called more than once', t => {
