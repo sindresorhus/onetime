@@ -32,9 +32,9 @@ declare const oneTime: {
 	import onetime = require('onetime');
 
 	const foo = onetime(() => {});
-	foo();
-	foo();
-	foo();
+	foo(); //=> 1
+	foo(); //=> 1
+	foo(); //=> 1
 
 	console.log(onetime.callCount(foo));
 	//=> 3
