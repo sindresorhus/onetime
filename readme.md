@@ -23,9 +23,9 @@ let i = 0;
 
 const foo = onetime(() => ++i);
 
-foo(); //=> 0
-foo(); //=> 0
-foo(); //=> 0
+foo(); //=> 1
+foo(); //=> 1
+foo(); //=> 1
 
 onetime.callCount(foo); //=> 3
 ```
@@ -72,6 +72,8 @@ Returns a number representing how many times `fn` has been called.
 Note: It throws an error if you pass in a function that is not wrapped by `onetime`.
 
 ```js
+const onetime = require('onetime');
+
 const foo = onetime(() => {});
 
 foo();
