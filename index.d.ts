@@ -15,6 +15,21 @@ declare const oneTime: {
 
 	@param fn - Function that should only be called once.
 	@returns A function that only calls `fn` once.
+	
+	@example
+	```
+	import onetime = require('onetime');
+
+	let i = 0;
+
+	const foo = onetime(() => ++i);
+
+	foo(); //=> 1
+	foo(); //=> 1
+	foo(); //=> 1
+
+	onetime.callCount(foo); //=> 3
+	```
 	*/
 	<ArgumentsType extends unknown[], ReturnType>(
 		fn: (...arguments: ArgumentsType) => ReturnType,
@@ -32,9 +47,9 @@ declare const oneTime: {
 	import onetime = require('onetime');
 
 	const foo = onetime(() => {});
-	foo(); //=> 1
-	foo(); //=> 1
-	foo(); //=> 1
+	foo();
+	foo();
+	foo();
 
 	console.log(onetime.callCount(foo));
 	//=> 3
