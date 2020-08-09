@@ -1,4 +1,4 @@
-declare namespace oneTime {
+declare namespace onetime {
 	interface Options {
 		/**
 		Throw an error when called more than once.
@@ -9,7 +9,7 @@ declare namespace oneTime {
 	}
 }
 
-declare const oneTime: {
+declare const onetime: {
 	/**
 	Ensure a function is only called once. When called multiple times it will return the return value from the first call.
 
@@ -33,7 +33,7 @@ declare const oneTime: {
 	*/
 	<ArgumentsType extends unknown[], ReturnType>(
 		fn: (...arguments: ArgumentsType) => ReturnType,
-		options?: oneTime.Options
+		options?: onetime.Options
 	): (...arguments: ArgumentsType) => ReturnType;
 
 	/**
@@ -58,7 +58,7 @@ declare const oneTime: {
 	callCount(fn: (...arguments: any[]) => unknown): number;
 
 	// TODO: Remove this for the next major release
-	default: typeof oneTime;
+	default: typeof onetime;
 };
 
-export = oneTime;
+export = onetime;
