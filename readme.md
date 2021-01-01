@@ -1,4 +1,4 @@
-# onetime [![Build Status](https://travis-ci.com/sindresorhus/onetime.svg?branch=master)](https://travis-ci.com/github/sindresorhus/onetime)
+# onetime
 
 > Ensure a function is only called once
 
