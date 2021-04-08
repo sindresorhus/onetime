@@ -1,6 +1,6 @@
 {
 	"name": "onetime",
-	"version": "5.1.2",
+	"version": "6.0.0",
 	"description": "Ensure a function is only called once",
 	"license": "MIT",
 	"repository": "sindresorhus/onetime",
