@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import onetime = require('.');
+import onetime from './index.js';
 
 const foo = onetime(() => 5);
 expectType<number>(foo());

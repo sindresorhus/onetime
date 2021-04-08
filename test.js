@@ -1,5 +1,5 @@
 import test from 'ava';
-import onetime from '.';
+import onetime from './index.js';
 
 test('call function once', t => {
 	let i = 0;
@@ -12,7 +12,7 @@ test('call function once', t => {
 test('option to throw is called more than once', t => {
 	const fixture = onetime(() => {}, {throw: true});
 	fixture();
-	t.throws(fixture, /Function .* can only be called once/);
+	t.throws(fixture, {message: /Function .* can only be called once/});
 });
 
 test('`callCount` method', t => {
@@ -29,5 +29,5 @@ test('`callCount` method - throw on non-onetime-wrapped functions', t => {
 
 	t.throws(() => {
 		onetime.callCount(fixture);
-	}, /not wrapped/);
+	}, {message: /not wrapped/});
 });
