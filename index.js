@@ -16,7 +16,7 @@ const onetime = (function_, options = {}) => {
 
 		if (callCount === 1) {
 			returnValue = function_.apply(this, arguments_);
-			function_ = null;
+			function_ = undefined;
 		} else if (options.throw === true) {
 			throw new Error(`Function \`${functionName}\` can only be called once`);
 		}
