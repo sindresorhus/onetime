@@ -1,4 +1,4 @@
-import mimicFunction from 'mimic-fn';
+import mimicFunction from 'mimic-function';
 
 const calledFunctions = new WeakMap();
 
