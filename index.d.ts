@@ -7,6 +7,14 @@ export type Options = {
 	readonly throw?: boolean;
 };
 
+declare const tag: unique symbol;
+
+/**
+A function that has been wrapped by `onetime`.
+*/
+export type OnetimeFunction<ArgumentsType extends unknown[], ReturnType> =
+	((...arguments_: ArgumentsType) => ReturnType) & {readonly [tag]: true};
+
 declare const onetime: {
 	/**
 	Ensure a function is only called once. When called multiple times it will return the return value from the first call.
@@ -32,13 +40,15 @@ declare const onetime: {
 	<ArgumentsType extends unknown[], ReturnType>(
 		fn: (...arguments_: ArgumentsType) => ReturnType,
 		options?: Options
-	): (...arguments_: ArgumentsType) => ReturnType;
+	): OnetimeFunction<ArgumentsType, ReturnType>;
 
 	/**
 	Get the number of times `fn` has been called.
 
 	@param fn - The function to get call count from.
 	@returns A number representing how many times `fn` has been called.
+
+	Note: It throws an error if you pass in a function that is not wrapped by `onetime`.
 
 	@example
 	```
@@ -53,7 +63,7 @@ declare const onetime: {
 	//=> 3
 	```
 	*/
-	callCount(fn: (...arguments_: any[]) => unknown): number;
+	callCount(fn: OnetimeFunction<any[], unknown>): number;
 };
 
 export default onetime;
