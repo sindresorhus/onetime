@@ -14,7 +14,7 @@ const onetime = (function_, options = {}) => {
 	const onetime = function (...arguments_) {
 		calledFunctions.set(onetime, ++callCount);
 
-		if (callCount === 1) {
+		if (function_) {
 			returnValue = function_.apply(this, arguments_);
 			function_ = undefined;
 		} else if (options.throw === true) {
